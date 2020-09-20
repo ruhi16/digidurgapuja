@@ -1,0 +1,83 @@
+@ACCESS_TOKEN=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDA1NDQ1NjMsImV4cCI6MTYwMTE0OTM2MywiYXVkIjoiNWY2NWU1ZjQ4MWM5YTMzMzU4OGZkMTZmIiwiaXNzIjoicmF3c29sdXRpb25zLmluIn0.oePxGKs3SC934o5mVY-TAcQiC_Sq0F5q2SbkzEPTJZA
+@REFRESH_TOKEN="refresh token"
+
+
+
+
+### Home Page ###
+GET http://localhost:3000/
+content-type: application/json,
+
+
+
+
+
+
+### User Registration Submit ###
+POST  http://localhost:3000/api/register
+content-type: application/json
+
+{
+    "firstname":"Ayantika",
+    "lastname":"Das",
+    "email":"abcdaaa@gmail.com",
+    "password":"abcd"
+
+}
+
+
+
+
+
+
+
+
+
+
+### User Login Submit ###
+POST  http://localhost:3000/api/login
+content-type: application/json
+
+{    
+    "email":"abcd@gmail.com",
+    "password":"abcd"
+}
+
+
+
+
+
+
+
+
+### User's Dashboard
+GET http://localhost:3000/api/users/
+content-type: application/json
+authorization: {{ACCESS_TOKEN}}
+
+
+
+
+
+
+
+
+
+
+### User's Logout
+POST http://localhost:3000/api/logout/
+content-type: application/json,
+authorization: {{ACCESS_TOKEN}} 
+
+{
+    "refresh_token": ""
+}
+
+
+
+
+
+
+
+### New Request ###
+GET http://localhost:3000/unknown
