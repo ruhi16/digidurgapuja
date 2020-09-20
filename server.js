@@ -23,8 +23,8 @@ app.get('/ping', (req, res, next)=>{
 });
 
 
-const userRoutes = require('./routes/users');
-app.use('/api', userRoutes);
+// const userRoutes = require('./routes/users');
+// app.use('/api', userRoutes);
 
 
 
