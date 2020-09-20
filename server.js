@@ -12,11 +12,14 @@ app.use(express.json()); //{extended:false}
 
 
 app.get('/', (req, res, next)=>{
-    res.render({"message":"Hello World: "+process.env.MONGODB_URI });
+    res.send({"message":"Hello World: "+process.env.MONGODB_URI });
 });
 
+
+
+
 app.get('/ping', (req, res, next)=>{
-    res.render({"message":"It is now live!!!"});
+    res.send({"message":"It is now live!!!"});
 });
 
 

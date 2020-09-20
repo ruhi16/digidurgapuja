@@ -2,6 +2,16 @@
 @REFRESH_TOKEN="refresh token"
 
 
+### Home Page ###
+GET http://localhost:3000/ping
+content-type: application/json,
+
+
+
+
+
+
+
 
 
 ### Home Page ###
