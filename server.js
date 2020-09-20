@@ -15,7 +15,9 @@ app.get('/', (req, res, next)=>{
     res.render({"message":"Hello World: "+process.env.MONGODB_URI });
 });
 
-
+app.get('/', (req, res, next)=>{
+    res.render({"message":"Hello World: "+process.env.MONGODB_URI });
+});
 
 
 const userRoutes = require('./routes/users');
