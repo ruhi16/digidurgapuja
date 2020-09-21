@@ -1,6 +1,6 @@
 const JWT = require('jsonwebtoken');
-
 const createError = require('http-error');
+const User = require('../models/User');
 
 
 module.exports = {
@@ -43,9 +43,25 @@ module.exports = {
         const authHeader = req.headers['authorization'];
         const token = authHeader.split(' ')[1];
         
-        JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {
+        JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, async (err, payload) => {
             if(err) return next(createError.Unauthorized());//err.message
             
+            // const user = await User.findOne({ _id: payload['aud']});
+            
+            // try{
+            //     if( token != user.access_token) {
+            //         // return ( next(createError.Unauthorized()) );
+            //         console.log('unauthorized user');
+            //         return next(createError.Unauthorized());
+                    
+            //     }
+
+            // }catch(err){
+            //     console.log(err);
+            //     // next(createError.Unauthorized());
+            // }
+
+
             req.payload = payload;
             next();
         });

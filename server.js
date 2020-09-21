@@ -1,6 +1,7 @@
 const express = require('express');
 const createError = require('http-errors');
-const User = require('./models/User');
+// const User = require('./models/User');
+const config = require('config');
 require('dotenv').config();
 
 const connectDb = require('./utils/database');
@@ -12,19 +13,38 @@ app.use(express.json()); //{extended:false}
 
 
 app.get('/', (req, res, next)=>{
-    res.send({"message":"Hello World: "+process.env.MONGODB_URI });
+    res.send({"message":"Hello World: " + config.get('name') });
 });
-
-
-
 
 app.get('/ping', (req, res, next)=>{
     res.send({"message":"It is now live!!!"});
 });
 
 
+
+// for user authenticaations
 const userRoutes = require('./routes/users');
 app.use('/api', userRoutes);
+
+
+
+
+// for club data with image upload
+app.use('/uploads',express.static('uploads'));
+const clubRoutes = require('./routes/clubRoutes.js');
+app.use('/api/clubs', clubRoutes);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

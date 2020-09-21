@@ -1,5 +1,22 @@
-@ACCESS_TOKEN=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDA1NDQ1NjMsImV4cCI6MTYwMTE0OTM2MywiYXVkIjoiNWY2NWU1ZjQ4MWM5YTMzMzU4OGZkMTZmIiwiaXNzIjoicmF3c29sdXRpb25zLmluIn0.oePxGKs3SC934o5mVY-TAcQiC_Sq0F5q2SbkzEPTJZA
+@ACCESS_TOKEN=Bearer eeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDA2MTE5NTcsImV4cCI6MTYwMTIxNjc1NywiYXVkIjoiNWY2NWU1ZjQ4MWM5YTMzMzU4OGZkMTZmIiwiaXNzIjoicmF3c29sdXRpb25zLmluIn0.Tf9gBr4ocvmhC4uDV39lgDaUw_xZ9ixeKIQkodaqLdk
 @REFRESH_TOKEN="refresh token"
+
+
+
+### Home Page ###
+GET http://localhost:3000/
+content-type: application/json,
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### Home Page ###
@@ -13,10 +30,6 @@ content-type: application/json,
 
 
 
-
-### Home Page ###
-GET http://localhost:3000/
-content-type: application/json,
 
 
 
@@ -61,7 +74,7 @@ content-type: application/json
 
 
 ### User's Dashboard
-GET http://localhost:3000/api/users/
+GET http://localhost:3000/api/users
 content-type: application/json
 authorization: {{ACCESS_TOKEN}}
 
@@ -75,7 +88,7 @@ authorization: {{ACCESS_TOKEN}}
 
 
 ### User's Logout
-POST http://localhost:3000/api/logout/
+POST http://localhost:3000/api/logout
 content-type: application/json,
 authorization: {{ACCESS_TOKEN}} 
 
@@ -91,3 +104,22 @@ authorization: {{ACCESS_TOKEN}}
 
 ### New Request ###
 GET http://localhost:3000/unknown
+
+
+
+
+
+
+### All Clubs
+GET http://localhost:3000/api/clubs
+
+
+
+
+### All Clubs
+POST http://localhost:3000/api/clubs/register
+content-type: application/json
+
+{
+
+}
